@@ -1,0 +1,22 @@
+composer dump-autoload -o
+
+method chaining
+https://stackoverflow.com/questions/3724112/php-method-chaining-or-fluent-interface
+
+
+SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^orders/page/([0-9]+)$  routes/zadatak4-1.php?page=$1 [L]
+RewriteRule ^orders/([0-9]+)$  routes/zadatak4-1.php/?id=$1  [L]
+RewriteRule ^orders$  routes/zadatak4-1.php  [L]
+RewriteRule ^login$  routes/login.php  [L]
+RewriteRule ^session/login$  routes/session.php?login  [L]
+RewriteRule ^session/logout$  routes/session.php?logout  [L]
+RewriteRule ^register$  routes/register.php  [L]
+RewriteRule ^add/product$  routes/zadatak4-2.php?product  [L]
+RewriteRule ^add/order$  routes/zadatak4-2.php?order  [L]

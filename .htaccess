@@ -1,0 +1,16 @@
+SetEnvIf Authorization .+ HTTP_AUTHORIZATION=$0
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^login$  routes/api.php/?login  [L]
+RewriteRule ^logout$  routes/api.php/?logout  [L]
+RewriteRule ^register$  routes/api.php/?register  [L]
+RewriteRule ^orders/([0-9]+)$  routes/api.php/?orders&id=$1  [L]
+RewriteRule ^orders/page/([0-9]+)$  routes/api.php/?orders&page=$1 [L]
+RewriteRule ^orders$  routes/api.php/?orders  [L]
+RewriteRule ^products$  routes/api.php/?products  [L]
+
+
